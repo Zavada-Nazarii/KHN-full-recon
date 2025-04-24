@@ -52,7 +52,43 @@ chmod +x full_recon.sh
 
 ---
 
-## 📌 Примітки
+## 🧱 Встановлення інструментів
 
-- Можна розширити підтримку проксі або Telegram-повідомлень
-- Можливо інтегрувати у CI/CD або recon-автоматизацію
+### 🔹 Встановлення Go
+
+1. Перейди до офіційної інструкції: [https://go.dev/doc/install](https://go.dev/doc/install)
+2. Скачай архів для своєї системи (наприклад `go1.21.6.linux-amd64.tar.gz`)
+3. Встанови:
+
+```bash
+sudo rm -rf /usr/local/go
+sudo tar -C /usr/local -xzf go1.21.6.linux-amd64.tar.gz
+echo 'export PATH=$PATH:/usr/local/go/bin' >> ~/.bashrc
+source ~/.bashrc
+go version
+```
+
+---
+
+### 🔹 Встановлення Katana
+
+```bash
+go install github.com/projectdiscovery/katana/cmd/katana@latest
+```
+
+---
+
+### 🔹 Встановлення httpx
+
+```bash
+go install github.com/projectdiscovery/httpx/cmd/httpx@latest
+```
+
+---
+
+### 🔹 Встановлення nuclei
+
+```bash
+go install github.com/projectdiscovery/nuclei/v2/cmd/nuclei@latest
+nuclei -update-templates
+```
